@@ -150,13 +150,6 @@
 	var bufferScene = new THREE.Scene();
 	var bufferCamera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 1000 );
 
-	var bufferMesh1, bufferMesh2, bufferMesh3;
-	var bufferMaterial;
-	
-	var picture;
-	
-
-	
 	init();
 	animate();
 	createSceneForOffScreenBuffer();
@@ -225,21 +218,31 @@
 		light.position.set( 0, 1, 1 ).normalize();
 		scene.add(light);
 		
+		bufferCamera.position.z = 8;
+		
+		var bufferGeometry1 = new THREE.DodecahedronGeometry( 1, 0);
+        var bufferGeometry2 = new THREE.BoxGeometry(2, 2, 2);
+        var bufferGeometry3 = new THREE.PlaneGeometry( 1, 4, 32);
+		
+		var texture = THREE.ImageUtils.loadTexture('test1.jpg');
+		
+		//shader 3
+		var materials = new THREE.MeshBasicMaterial({
+			map: texture
+		});
+		
 		//add objects to scene
 		mesh1 = new THREE.Mesh( geometry1, material );
 		mesh1.translateX(-5);
         scene.add( mesh1 );
-
-        
-	    mesh2 = new THREE.Mesh( geometry2, materialss );
+		
+	    mesh2 = new THREE.Mesh( bufferGeometry2, materials );
 		mesh2.translateX(0.0);
-        //scene.add( mesh2 );
+        scene.add( mesh2 );
 
         mesh3 = new THREE.Mesh( geometry3, material );
 		mesh3.translateX(5);
         scene.add( mesh3 );	
-		
-	
 		
 		renderer = new THREE.WebGLRenderer();
 		renderer.setClearColor( 0x999999 );
@@ -250,29 +253,10 @@
 		window.addEventListener( 'resize', onWindowResize, false );
 	}
 	
-	function createSceneForOffScreenBuffer() {
-
-		bufferCamera.position.z = 8;
-		
-		var bufferGeometry1 = new THREE.DodecahedronGeometry( 1, 0);
-        var bufferGeometry2 = new THREE.BoxGeometry(1, 1, 1);
-        var bufferGeometry3 = new THREE.PlaneGeometry( 1, 4, 32);
-		
-		var texture = THREE.ImageUtils.loadTexture('test1.jpg');
-		
-		//shader 3
-		var materials = new THREE.MeshBasicMaterial({
-			map: texture
-		});
-		picture = new THREE.Mesh( bufferGeometry2, materials );
-		
-		scene.add(picture);
-	}
-	
 	
 	function animate() {
 
-		
+		//bufferGeometry2.position.x = time * 0.5;
 		
 		requestAnimationFrame( animate );
 		render();
@@ -284,11 +268,10 @@
 		var time = performance.now();
 
 		mesh1.rotation.x = time * 0.005;
-		//mesh2.rotation.x = time * 0.00005;
-		//mesh2.rotation.y = time * 0.0005;
+		mesh2.rotation.x = time * 0.00005;
+		mesh2.rotation.y = time * 0.0005;
 		mesh3.rotation.x = time * 0.0009;
 		
-
 		//render onto our off-screen texture (our FBO)
 		renderer.setClearColor( 0xCCCCCC );
 		renderer.render(bufferScene,bufferCamera,bufferObject);
