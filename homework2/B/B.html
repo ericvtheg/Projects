@@ -66,14 +66,14 @@
 			cubeSineDriver_change = 0.1;
 			mesh_rotation_x = 0.01;
 			mesh_rotation_y = 0.01;
-			smoke_color = 0x00dddd;
+			smoke_color = 0x00DD6E;
 			
 			var params = {
 				mesh_rotation_x: 0.01,
 				mesh_rotation_y: 0.01,
 				cubeSineDriver_change: 0.01,
 				smoke_particles: 0.01,
-				smoke_color: 0x00dddd,
+				smoke_color: 0x00DD6E,
 			}
 			
 			light = new THREE.DirectionalLight(0xffffff, 1);
@@ -91,7 +91,7 @@
 			
 			for (p = 0; p < 150; p++) {
 				var particle = new THREE.Mesh(smokeGeo,smokeMaterial);
-				particle.position.set(Math.random()*300-250,Math.random()*300-250,Math.random()*500-100);
+				particle.position.set(Math.random()*600-250,Math.random()*600-250,Math.random()*1000-100);
 				particle.rotation.z = Math.random() * 360;
 				scene.add(particle);
 				smokeParticles.push(particle);
