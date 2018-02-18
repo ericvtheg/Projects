@@ -68,7 +68,6 @@
 			mesh_rotation_y = 0.01;
 			smoke_color = 0x00dddd;
 			
-			
 			var params = {
 				mesh_rotation_x: 0.01,
 				mesh_rotation_y: 0.01,
@@ -84,18 +83,15 @@
 			gui.add( params, "mesh_rotation_x", -100, 100);
 			gui.add( params, "mesh_rotation_y", -100, 100);
 			gui.add( params, "smoke_particles", -100, 100);
-			
-			
-			THREE.ImageUtils.crossOrigin = ''; //Need this to pull in crossdomain images from AWS
 
-			smokeTexture = THREE.ImageUtils.loadTexture('https://s3-us-west-2.amazonaws.com/s.cdpn.io/95637/Smoke-Element.png');
+			smokeTexture = THREE.ImageUtils.loadTexture('smoke.png');
 			smokeMaterial = new THREE.MeshLambertMaterial({color: smoke_color, map: smokeTexture, transparent: true});
 			smokeGeo = new THREE.PlaneGeometry(300,300);
 			smokeParticles = [];
 			
 			for (p = 0; p < 150; p++) {
 				var particle = new THREE.Mesh(smokeGeo,smokeMaterial);
-				particle.position.set(Math.random()*500-250,Math.random()*500-250,Math.random()*1000-100);
+				particle.position.set(Math.random()*300-250,Math.random()*300-250,Math.random()*500-100);
 				particle.rotation.z = Math.random() * 360;
 				scene.add(particle);
 				smokeParticles.push(particle);
@@ -121,16 +117,13 @@
 			stats.begin();
 			delta = clock.getDelta();
 			requestAnimationFrame( animate );
-			evolveSmoke();
-			render();
-			stats.end();
-		}
-		function evolveSmoke() {
 			smoke_particles = smokeParticles.length;
 			while(smoke_particles--) {
 				smokeParticles[smoke_particles].rotation.z += (delta * 0.2);
 			}
-	}
+			render();
+			stats.end();
+		}
 
 	function render() {
 		mesh.rotation.x += mesh_rotation_x;
