@@ -121,8 +121,8 @@ data_blank = 'https://connect.data.com/search#p%3Dsearchresult%3B%3Bss%3Dsingleb
 end_data_blank = '%22%7D'
 num = 0;
 payload = dict(
-    j_username= 'awesomesimpsons@gmail.com',
-    j_password= 'J930dd3pkh7nr0f7',
+    j_username= '',
+    j_password= '',
     CSRF_TOKEN= ''
 )
 print("""\
@@ -145,7 +145,7 @@ print("Please use Data Connect login to continue")
 print("Logging in...")
 with requests.session() as s:
     headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
-    page = s.get('https://connect.data.com/login', auth=('awesomesimpsons@gmail.com', 'J930dd3pkh7nr0f7'), headers=headers)
+    page = s.get('https://connect.data.com/login', auth=('awesomesimpsons@gmail.com', ''), headers=headers)
     login_html = html.fromstring(page.text)
     hidden_inputs = login_html.xpath(r'//form/input[@type="hidden"]')
     form = {x.attrib["name"]: x.attrib["value"] for x in hidden_inputs}
