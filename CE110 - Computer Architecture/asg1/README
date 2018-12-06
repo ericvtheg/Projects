@@ -1,0 +1,27 @@
+README
+
+-----Group 17-----
+William O'Callahan 
+Eric Ventor 
+Ivan Espiritu
+
+-----FILES-----
+
+designdoc.pdf
+execute.c
+Makefile
+README
+riscv_sim_framework.c
+riscv_sim_framework.h
+test.c
+
+-----Summary-----
+
+This program is designed to read an instruction from the PC counter, and 
+execute the instruction's details. Each type of instruction has a case/cases
+to follow that will lead to its execution. 
+
+Tested through python test cases and custom C framework.
+
+
+

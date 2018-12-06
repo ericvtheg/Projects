@@ -1,0 +1,47 @@
+README
+
+-----Group 17-----
+William O'Callahan 
+Eric Ventor 
+Ivan Espiritu
+
+-----FILES-----
+
+
+cache.c
+cache.h
+decode.c
+designdoc.pdf (actual implementation)
+designdoctheoretical.pdf (theoretical implementation)
+fetch.c   
+macros.h
+Makefile
+memory.c
+pipeline.c
+README
+riscv_pipeline_registers.h
+riscv_sim_framework.c
+riscv_sim_framework.h
+writeback.c
+x.c
+
+-----Summary-----
+
+This program is designed to implement i-cache and d-cache into our pipeline.
+These cache implementations also come with stalling on misses and regular hits 
+on the cache. 
+
+-----Implementation Notes-----
+
+We implemented the caches through a struct. In fetch and memory, we installed booleans
+as flags in a bunch of conditionals to determine whether data from the instruction was
+already in the cache, or it was not. These flags determined whether previous cycles
+accessed memory reads/writes, and thus determines whether the current cycle would need 
+to use memory_status rather than a regular read/write. On cache misses, the data gets
+stalled within the stage (fetch/memory) by passing on the same values (memory loop) or 0s
+for the cycle (fetch loop) if a memory read/write needs to be accessed. 
+
+
+
+
+

@@ -1,0 +1,20 @@
+CREATE TABLE Customers (
+    transDate       VARCHAR(8),
+    customerID      INTEGER PRIMARY KEY,
+    homePhone	    VARCHAR(13),
+    newOrUsed       CHAR(1),
+    Primary	        VARCHAR(20),
+    first	        VARCHAR(15),
+    last            VARCHAR(20),
+    address	        VARCHAR(50),
+    City            VARCHAR(20),
+    state           CHAR(2),
+    zip     	    CHAR(5),
+    yearOfCar       INT,
+    make&model      VARCHAR(45),
+    eMail	        VARCHAR(45),
+    stkNum          VARCHAR(10),
+    Deal#	        INT,
+    expDate         VARCHAR(8),
+    cardNum         VARCHAR(16) /*
+);

@@ -1,0 +1,25 @@
+Eric Ventor 
+Eventor
+1492157
+PA5
+12/5/2017
+Prof. Tantalo
+
+List.c: List implementation
+	
+List.h: List ADT
+
+Graph.h: Graph ADT
+
+Graph.c: Graph Implementation
+
+GraphTest.c: Tests Graph ADT
+
+FindComponents.c: Graph & List Client. Also finds strongly connected componenets
+
+README: this
+
+Makefile: useful accessible terminal commands
+
+Other Comments:
+Have a good winter break!

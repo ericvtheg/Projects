@@ -1,0 +1,110 @@
+@font-face {
+	font-family: leaguegothic-regular;
+	src: url(fonts/LeagueGothic-Regular.otf);
+}
+
+@font-face {
+	font-family: leaguegothic-italic;
+	src: url(fonts/LeagueGothic-Italic.otf);
+}
+
+@font-face {
+	font-family: leaguegothic-condensedregular;
+	src: url(fonts/LeagueGothic-CondensedRegular.otf);
+} 
+
+body {
+	font-family: 'leaguegothic-regular';
+	background-image: url("img/background-camo1.jpg");
+}
+
+* {
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0;
+	border: 0;
+	box-sizing:border-box
+}
+
+#Figure_background {
+   margin-top: -2%;
+   width:50%;
+   height:25%;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+}
+
+#GTB_Logo {
+	position: absolute; 
+	visibility: visible; 
+	left: 15px; 
+	top: 50px; 
+	z-index: 200;
+	width:20%;
+	min-width:200px;
+	height:10%;
+	min-height:50px;
+	margin-top:0.1%;
+}
+
+#sub-header{
+	font-family: 'leaguegothic-regular';
+	font-size: 2em;
+	visibility: visible;
+	padding-left: 15%;
+	color: #C12C2E;
+	z-index: 200;
+	bottom: 78%;
+	left: 3.5%;
+}
+
+#date {
+	display:inline-block;
+}
+
+#time {
+	display:inline-block;
+}
+
+#time-zone {
+	display:inline-block;
+}
+
+.column {
+    float: right;
+    width: 40%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.social {
+	list-style-type: none;
+	text-align: center;
+	
+}
+.social li {
+	display: inline;
+	
+}
+.social i {
+	font-size: 100px;
+	margin:1%;
+	padding: 3% 3% 3% 3%;
+	color: #C12C2E;
+}
+.social i:visited{
+	color: #F80302;
+}
+.social i:hover{
+	color: #990000;
+}
+.second {
+	text-align:center;
+}

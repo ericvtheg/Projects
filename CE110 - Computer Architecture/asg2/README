@@ -1,0 +1,35 @@
+README
+
+-----Group 17-----
+William O'Callahan 
+Eric Ventor 
+Ivan Espiritu
+
+-----FILES-----
+
+decode.c
+designdoc.pdf
+designdocpipeline.pdf
+fetch.c
+macros.h
+Makefile
+memory.c
+pipeline.c
+README
+riscv_pipeline_registers.h
+riscv_sim_framework.c
+riscv_sim_framework.h
+writeback.c
+x.c
+
+-----Summary-----
+
+This program is designed to implement the pipeline into our from our 
+last assignment. We split the execution into five stages of the pipeline,
+and then added branch prediction with the BTB, full forwarding, stalls,
+register passing etc. 
+
+
+
+
+
