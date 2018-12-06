@@ -1,0 +1,5 @@
+This is one of my favorite scripts that I’ve made for the sole reason that it is consistently used. My friend had to go line by line, column by column, copy and pasting customer’s info in order to create a gift card for them. Meaning that she would have to copy and paste their name, address, email, etc so that way that specific card number was associated with their name. 
+
+My friend would get about a thousand customers every 2 weeks to complete. As you can imagine this would be EXTREMELY tedious and mundane. Also including the fact that it’s for her family business, she had been doing this for YEARS. I set out to come up with a solution and I did. 
+
+Since the program they use, MyCustomerData, is so outdated there weren’t many other options than a python script that used the keyboard to input information. I grab each excel row and put each attribute into an array where it gets copy and pasted into each field. This script would still run for hours due to long load times of the dated program. I genuinely can not imagine having to spend hours and hours doing such a thing. Needless to say she was very thankful and I was happy to do it for her. 
